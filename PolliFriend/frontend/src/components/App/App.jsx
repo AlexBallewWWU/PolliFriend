@@ -7,7 +7,6 @@ import EducationPage from '../EducationPage/EducationPage.jsx'
 import GardenPlanPage from '../GardenPlanPage/GardenPlanPage.jsx'
 
 function App() {
-  // test comment
   return (
     <Routes>
         <Route path="/" element={<HomePage />} />
