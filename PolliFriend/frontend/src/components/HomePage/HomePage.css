@@ -1,0 +1,26 @@
+.Body{
+    color: #000000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+.MainContent{
+    align-content: center;
+}
+.Title{
+    padding-top: 2%;
+}
+.DiscriptionBox{
+    background-color: #59C07B;
+    /* width: 50%; */
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: .5%;
+    border: solid;
+    border-color: #000000;
+    border-width: small;
+}
