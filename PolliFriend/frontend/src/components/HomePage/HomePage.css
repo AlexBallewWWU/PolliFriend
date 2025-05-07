@@ -1,0 +1,57 @@
+.Body{
+    color: #000000;
+    /* position: fixed; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* align-content: stretch; */
+    flex-direction: column;
+}
+.MainContent{
+    align-content: center;
+}
+.Title{
+    padding-top: 10%;
+}
+.DiscriptionBox{
+    background-color: #59C07B;
+    /* width: 50%; */
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: .5%;
+    border: solid;
+    border-color: #000000;
+    border-width: small;
+    /* drop-shadow(5px 5px); */
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+}
+.PlanSection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.PlanDesctiption{
+    width: 300px;
+}
+.EducationSection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.EducationDesctiption{
+    width: 300px;
+}
+.CommunitySection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.CommunityDesctiption{
+    width: 300px;
+}
