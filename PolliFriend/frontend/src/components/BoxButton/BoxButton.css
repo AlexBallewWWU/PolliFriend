@@ -7,4 +7,7 @@
     border: solid;
     border-color: #000000;
     border-width: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
