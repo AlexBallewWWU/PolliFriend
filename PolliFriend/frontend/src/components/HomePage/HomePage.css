@@ -1,18 +1,20 @@
 .Body{
     color: #000000;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     display: flex;
+    /* flex-wrap: wrap; */
+    /* align-content: stretch; */
     flex-direction: column;
 }
 .MainContent{
     align-content: center;
 }
 .Title{
-    padding-top: 2%;
+    padding-top: 10%;
 }
 .DiscriptionBox{
     background-color: #59C07B;
@@ -23,4 +25,31 @@
     border: solid;
     border-color: #000000;
     border-width: small;
+}
+.PlanSection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.PlanDesctiption{
+    width: 300px;
+}
+.EducationSection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.EducationDesctiption{
+    width: 300px;
+}
+.CommunitySection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.CommunityDesctiption{
+    width: 300px;
 }
