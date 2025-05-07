@@ -25,6 +25,8 @@
     border: solid;
     border-color: #000000;
     border-width: small;
+    /* drop-shadow(5px 5px); */
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
 }
 .PlanSection{
     padding-top: 4%;
