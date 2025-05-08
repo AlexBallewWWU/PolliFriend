@@ -1,15 +1,19 @@
 import './BoxButton.css'
 import React from "react";
-import {Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function BoxButton({title, pageURL}) {
-    console.log(title)
+
+    const navigate = useNavigate();
+    
+    const movePages = () => {
+        navigate(pageURL)
+    };
+
     return (
         <div className="Box">
             <h2>{title}</h2>
-            <Link to={pageURL}><button>
-              Go to Page
-            </button></Link>
+            <button onClick={movePages}> Go to Page </button>
         </div>
     )
 }
