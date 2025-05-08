@@ -1,14 +1,24 @@
-.Box{
+.Box {
     background-color: #59C07B;
-    /* width: 50%; */
-    width: 150px;
-    height: 220px;
+    max-width: 200px;
+    max-height: 300px;
     padding: .5%;
     border: solid;
     border-color: #000000;
     border-width: small;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+.Box h2 {
+    margin-bottom: 20%;
+    font-size: 30px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    /* max-height: 30%; */
 }
