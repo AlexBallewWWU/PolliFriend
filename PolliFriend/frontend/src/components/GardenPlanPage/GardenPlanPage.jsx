@@ -1,6 +1,7 @@
 import './GardenPlanPage.css'
 import tempMap from '../../assets/temp.svg'
-import plant from '../../assets/plant.svg'
+import Banner from '../Banner/Banner.jsx'
+
 
 function GardenPlanPage() {
     const buttonClick = (type) => {
@@ -9,8 +10,8 @@ function GardenPlanPage() {
 
     return (
         <>
+            <Banner name={"Garden Planning Page"}></Banner>
             <div>
-                <h1 style={{ color: 'black' }}>Garden Planning Page</h1>
                 <div className='garden-map'>
                     <div className='add'>
                         <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
@@ -35,18 +36,9 @@ function GardenPlanPage() {
                         <div className='bg-4'>
                             <div className='stat'></div>
                         </div>
-
-
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
-
         </>
     )
 }

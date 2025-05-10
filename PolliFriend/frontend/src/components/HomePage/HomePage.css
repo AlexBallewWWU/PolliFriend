@@ -1,0 +1,53 @@
+.Body{
+    color: #000000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Title{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 40px;
+    color: #2A7017;
+    font-weight: bold;
+}
+.DiscriptionBox{
+    background-color: #59C07B;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: .5%;
+    border: solid;
+    border-color: #000000;
+    border-width: small;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+}
+.PlanSection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.PlanDesctiption{
+    width: 300px;
+}
+.EducationSection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.EducationDesctiption{
+    width: 300px;
+}
+.CommunitySection{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.CommunityDesctiption{
+    width: 300px;
+}
