@@ -1,0 +1,314 @@
+/* potted-plant-black-outline-illustration-on-transparent-background-free-png 1 */
+
+
+
+
+.garden-map {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.garden-map .map {
+    flex-grow: 1;
+
+    /* background-color: #0000FF; */
+    /* object-fit: cover; */
+    /* padding: 5%; */
+
+}
+.garden-map .add {
+    display: flex;
+    padding:5%;
+    flex-direction: column;
+    /* background-color: #000000; */
+}
+
+.add .add-plant {
+
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    margin: 10%;
+
+    width: 120px;
+    height: 120px;
+    left: 59px;
+    top: 259px;
+
+    background: #2C9C0D;
+    border: 2px solid #000000;
+    background-image: url('../../assets/plant.svg');
+    background-position: center;
+
+
+
+
+    /* potted-plant-black-outline-illustration-on-transparent-background-free-png 1 */
+}
+
+/* Ellipse 2 */
+.add .add-building {
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    /* position: absolute; */
+    margin: 10%;
+
+    width: 120px;
+    height: 120px;
+    left: 59px;
+    top: 441px;
+
+    background: #B1C216;
+    border: 2px solid #000000;
+    background-image: url('../../assets/house.svg');
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+}
+
+.add .add-water {
+    /* Ellipse 3 */
+
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    /* position: absolute; */
+    margin: 10%;
+
+    width: 120px;
+    height: 120px;
+    left: 59px;
+    top: 632px;
+
+
+    
+    background: #0DB1D2;
+    border: 2px solid #000000;
+    background-image: url('../../assets/water-drop-png-plumbing-sewer-repair-septic-service-36.png');
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+
+ 
+}
+
+.add .add-other {
+    /* Ellipse 5 */
+
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    /* position: absolute; */
+    margin: 10%;
+
+    width: 120px;
+    height: 120px;
+    left: 59px;
+    top: 822px;
+
+    background: #A0A4A5;
+    border: 2px solid #000000;
+    background-image: url('../../assets/other.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.garden-map .garden-stats {
+    /* Stats */
+
+    /* position: absolute; */
+    flex-grow: 1;
+
+    padding: 5%;
+    width: 1041px;
+    height: 371px;
+    left: 357px;
+    top: 734px;
+    /* background: black; */
+}
+
+
+
+/* Rectangle 1 */
+.garden-stats .bg-1 {
+    /* position: absolute; */
+    margin: 1%;
+    /* width: 888px;
+    height: 52px;
+    left: 153px;
+    top: 17px; */
+
+    background: #929292;
+}
+
+.garden-stats .bg-1 .stat {
+    /* position: absolute; */
+    width: 313px;
+    height: 40px;
+    left: 153px;
+    top: 23px;
+
+    background: #FF0F0F;
+}
+
+.garden-stats .bg-2 {
+    /* position: absolute; */
+    margin: 1%;
+
+    /* width: 888px;
+    height: 52px;
+    left: 153px;
+    top: 302px; */
+
+    background: #929292;
+}
+
+.garden-stats .bg-3 {
+    /* position: absolute; */
+    margin: 1%;
+
+    /* width: 888px;
+    height: 52px;
+    left: 153px;
+    top: 207px; */
+
+    background: #929292;
+}
+
+.garden-stats .bg-4 {
+    /* position: absolute; */
+    margin: 1%;
+
+    /* width: 888px;
+    height: 52px;
+    left: 153px;
+    top: 112px; */
+
+    background: #929292;
+}
+
+.garden-stats .bg-4 .stat {
+    /* position: absolute; */
+    width: 482px;
+    height: 40px;
+    left: 153px;
+    /* top: calc(50% - 40px/2 - 492.5px); */
+
+    background: #19C90D;
+}
+
+.garden-stats .bg-3 .stat {
+    /* position: absolute; */
+    width: 783px;
+    height: 40px;
+    left: 153px;
+    /* top: 213px; */
+
+    background: #2EB5FE;
+}
+
+.garden-stats .bg-2 .stat {
+    width: 712px;
+    height: 40px;
+    left: 153px;
+    top: 308px;
+
+    background: #F5DD0C;
+}
+
+
+
+
+/* Ellipse 3 */
+
+/* box-sizing: border-box; */
+
+/* position: absolute;
+    width: 86px;
+    height: 86px;
+    left: 6px;
+    top: 190px;
+
+    background: #0DB1D2;
+    border: 2px solid #000000; */
+
+
+/* ocean-wave-small-tattoo-7793 3 */
+
+/* position: absolute;
+    width: 97.57px;
+    height: 33.41px;
+    left: 0.29px;
+    top: 212px; */
+
+/* background: url(ocean-wave-small-tattoo-7793.png); */
+/* transform: rotate(0.51deg); */
+
+
+/* image */
+
+/* box-sizing: border-box;
+
+    position: absolute;
+    width: 86px;
+    height: 86px;
+    left: 6px;
+    top: 0px; */
+
+/* background: url(image.png); */
+/* border: 2px solid #000000; */
+
+
+/* image */
+
+/* box-sizing: border-box;
+
+    position: absolute;
+    width: 86px;
+    height: 86px;
+    left: 6px;
+    top: 285px;
+
+    /* background: url(image.png); */
+/* border: 2px solid #000000; */
+
+
+/* Ellipse 6 */
+
+/* box-sizing: border-box;
+
+    position: absolute;
+    width: 86px;
+    height: 86px;
+    left: 6px;
+    top: 95px;
+
+    background: #19C90D;
+    border: 2px solid #000000; */
+
+
+/* ocean-wave-small-tattoo-7793 2 */
+
+/* position: absolute;
+    width: 97.57px;
+    height: 33.41px;
+    left: 0.29px;
+    top: 212px; */
+
+/* background: url(ocean-wave-small-tattoo-7793.png); */
+/* transform: rotate(0.51deg); */
+
+
+/* image 1 */
+
+/* position: absolute;
+    width: 69px;
+    height: 69px;
+    left: 14px;
+    top: 103px; */
+
+/* background: url(image.png); */
+
+/* } */
