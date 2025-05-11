@@ -1,4 +1,6 @@
 # PolliFriend
+## About The Project
+At PolliFriend we seek to help everyone from city planners to homeowners create a sustainable and eco-friendly space. Our design space is easy for anyone to understand and learn how to create carbon, pollination, and people friendly spaces. 
 
 ## Built With
  . React.js <br>
