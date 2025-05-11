@@ -1,0 +1,82 @@
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .topic-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .topic-row.left {
+    flex-direction: row;
+  }
+  
+  .topic-row.right {
+    flex-direction: row-reverse;
+  }
+  
+  .box-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .text-container {
+    flex: 2;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 0 20px black;
+  }
+  
+  /* Responsive stacking */
+  @media screen and (max-width: 768px) {
+    .topic-row {
+      flex-direction: column !important;
+      text-align: center;
+    }
+  
+    .box-container,
+    .text-container {
+      width: 100%;
+    }
+  
+    .description {
+      max-width: 90%;
+      margin: auto;
+    }
+  }
+  
