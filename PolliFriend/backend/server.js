@@ -8,6 +8,9 @@ const server = express();
 const PORT = process.env.PORT || 3000;
 server.use(express.json());
 server.use(cors());
+const submissionsRoute = require("./routes/submissions");
+server.use("/api/submissions", submissionsRoute);
+
 
 server.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
