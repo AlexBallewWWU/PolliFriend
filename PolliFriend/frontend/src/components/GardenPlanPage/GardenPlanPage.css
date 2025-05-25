@@ -1,12 +1,14 @@
 /* potted-plant-black-outline-illustration-on-transparent-background-free-png 1 */
 
-
-
+#root {
+    height: 100vh;
+}
 
 .garden-map {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100%;
 }
 .garden-map .map {
     flex-grow: 1;
