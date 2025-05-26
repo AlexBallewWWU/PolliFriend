@@ -21,6 +21,7 @@ ChartJS.register(
 )
 import PlantSelection from '../PlantSelection/PlantSelection.jsx'
 import { useEffect, useState } from 'react'
+import PlantMap from '../PlantMap/PlantMap.jsx';
 
 
 function GardenPlanPage() {
@@ -28,7 +29,7 @@ function GardenPlanPage() {
     const [plantSelection, setPlantSelection] = useState(true);
     const [plantData, setPlantData] = useState([]);
 
-            // Could cache this this in local storage if we wanted
+    // Could cache this this in local storage if we wanted
     useEffect(() => {
         getPlants();
     }, [])
@@ -38,7 +39,7 @@ function GardenPlanPage() {
             const response = await fetch("http://localhost:3000/api/plants", {
                 method: "GET",
                 headers: {
-                    "Content-Type" : "application/json"
+                    "Content-Type": "application/json"
                 },
             })
 
@@ -54,7 +55,7 @@ function GardenPlanPage() {
     }
 
     const buttonClick = (type) => {
-        switch(type) {
+        switch (type) {
             case "plant":
                 setPlantSelection(plantSelection ? false : true);
                 break;
@@ -69,20 +70,20 @@ function GardenPlanPage() {
 
     const data = {
         labels: ['Fire safty', 'CO2 consumption', 'Water Consumption', 'Plants'],
-        datasets: [{    
+        datasets: [{
             label: 'Garden Stats',
             data: [65, 59, 80, 81],
             backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(98, 98, 97, 0.2)',
-            'rgba(61, 105, 224, 0.2)',
-            'rgba(255, 205, 86, 0.2)'
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(98, 98, 97, 0.2)',
+                'rgba(61, 105, 224, 0.2)',
+                'rgba(255, 205, 86, 0.2)'
             ],
             borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(98, 98, 97)',
-            'rgb(61, 105, 224)',
-            'rgb(255, 205, 86)'
+                'rgb(255, 99, 132)',
+                'rgb(98, 98, 97)',
+                'rgb(61, 105, 224)',
+                'rgb(255, 205, 86)'
             ],
             borderWidth: 1
         }]
@@ -109,9 +110,9 @@ function GardenPlanPage() {
                 display: true,
                 text: 'Garden Stats',
                 font: {
-                        weight: 'bold',
-                        size: 20
-                    }
+                    weight: 'bold',
+                    size: 20
+                }
             }
         }
     }
@@ -120,27 +121,29 @@ function GardenPlanPage() {
         <>
             <Banner name={"Garden Planning Page"}></Banner>
             {/* <div> */}
-                <div className='garden-map'>
+            <div className='garden-map'>
 
-                    <div className='add'>
-                        <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
-                        <button title='Add Building'onClick={() => buttonClick('building')} className='add-building'></button>
-                        <button title='Add Water'onClick={() => buttonClick('water')} className='add-water'></button>
-                        <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
+                <div className='add'>
+                    <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
+                    <button title='Add Building' onClick={() => buttonClick('building')} className='add-building'></button>
+                    <button title='Add Water' onClick={() => buttonClick('water')} className='add-water'></button>
+                    <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
+                </div>
+                <div className='map-container'>
+                    <div className='map'>
+                        {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}
                     </div>
-                    <div className='map-container'>
-                        <div className='map'></div>
-                        <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img>
-                        {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}   {/* temp location move where ever */}
-                        
-                    </div>
-                    <div className='garden-barChart'>
-                       
-                        <Bar data = {data} options = {options}></Bar>
-
-                    </div>
+                    <PlantMap></PlantMap>
+                    {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
                     
                 </div>
+                <div className='garden-barChart'>
+
+                    <Bar data={data} options={options}></Bar>
+
+                </div>
+
+            </div>
 
         </>
     )
