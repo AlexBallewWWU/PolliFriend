@@ -15,9 +15,9 @@ function GardenPlanPage() {
                 <div className='garden-map'>
                     <div className='add'>
                         <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
-                        <button onClick={() => buttonClick('building')} className='add-building'></button>
-                        <button onClick={() => buttonClick('water')} className='add-water'></button>
-                        <button onClick={() => buttonClick('other')} className='add-other'></button>
+                        <button title='Add Building'onClick={() => buttonClick('building')} className='add-building'></button>
+                        <button title='Add Water'onClick={() => buttonClick('water')} className='add-water'></button>
+                        <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
                     </div>
                     <div className='map'>
                         <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img>
