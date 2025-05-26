@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './PlantSelection.css'
-import temp from '../../assets/Osoberry-Image.jpeg'
 
 function PlantSelection({plantData}) {
 
@@ -39,11 +38,13 @@ function Category({name, plantData}) {
 
 function Plants({name, plantData}) {
 
+  const addPlant = () => {
+    console.log("Adding plant")
+    // functionality here, might be a global var situation
+  }
 
   return (
     plantData.plants.map((item) => {
-      {console.log(item.type + " " + name)}
-
       return (
         item.type == name && 
         <div className='plant-container'>
@@ -51,7 +52,7 @@ function Plants({name, plantData}) {
           <div className='plant-info-container'>
             <div className='plant-title-container'>
               {item.name} 
-              <div className='plus-button'> + </div>
+              <div className='plus-button' onClick={addPlant}> + </div>
             </div>
             <p> {item.info}</p>
             <strong> Scores: Carbon: ({item.carbonScore}/3), Pollination: ({item.pollinationScore}/10), Water: ({item.waterScore}/6) </strong>
