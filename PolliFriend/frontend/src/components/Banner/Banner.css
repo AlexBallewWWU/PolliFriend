@@ -1,35 +1,81 @@
-.Header{
-    /* position: absolute; */
-    /* align-items: stretch; */
+.Header {
     width: 100%;
-    height: 100%;
-    /* position: relative; */
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    /* align-self: flex-start; */
-    /* position: sticky; */
-}
-.Banner{
+    position: relative;
+  }
+  
+  .Banner {
     background-color: #59C07B;
     color: #000000;
-    top: 0;
-    left: 0;
-    height: 12%;
+    height: 70px;
     text-align: center;
-    display: table;
-}
-.Banner h1 {
-    display:table-cell; 
-    vertical-align:middle
-}
-.Boarder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 4px solid black;
+  }
+  
+  .Banner h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+  
+  .button {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  .header-left {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hamburger-img {
+    height: 55px;
+  }
+
+  .hamburger {
+    font-size: 26px;
+    cursor: pointer;
+  }
+  /* .hamburger {
+    position: absolute;
+    left: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+  } */
+  
+  .Boarder {
     height: 1%;
-    top: 0;
-    left: 0;
     background-color: #2C9C0D;
-    color: #2C9C0D;
-    border: solid;
-    border-color: #000000;
-}
+    border: solid black;
+  }
+  
+  .sidebar {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #59C07B;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+    z-index: 999;
+  }
+  
+  .nav-link {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin: 5px 0;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
