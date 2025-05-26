@@ -17,7 +17,9 @@ function Banner({ name }) {
             &#9776;
           </div>
         </div>
-        <h1>{name}</h1>
+        <h1>
+          <Link className="link-clean" to="/">{name}</Link>
+        </h1>
       </div>
 
       {menuOpen && (

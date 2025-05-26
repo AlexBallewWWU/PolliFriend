@@ -10,13 +10,16 @@
     flex-wrap: wrap;
     height: 100%;
 }
-.garden-map .map {
+.garden-map .map-container {
     flex-grow: 1;
 
     /* background-color: #0000FF; */
     /* object-fit: cover; */
     /* padding: 5%; */
 
+}
+.garden-map .map {
+    position: absolute;
 }
 .garden-map .add {
     display: flex;

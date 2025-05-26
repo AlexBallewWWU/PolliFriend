@@ -18,8 +18,14 @@
   .Banner h1 {
     font-size: 28px;
     margin: 0;
+    text-decoration: none;
+    color: black;
+
   }
-  
+  .link-clean {
+    color: black;
+    text-decoration: none;
+  }
   .button {
     border: none;
     background: none;

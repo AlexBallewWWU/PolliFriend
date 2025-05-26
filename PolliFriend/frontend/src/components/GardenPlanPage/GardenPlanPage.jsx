@@ -53,7 +53,6 @@ function GardenPlanPage() {
             <Banner name={"Garden Planning Page"}></Banner>
             {/* <div> */}
                 <div className='garden-map'>
-                {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}   {/* temp location move where ever */}
 
                     <div className='add'>
                         <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
@@ -61,10 +60,15 @@ function GardenPlanPage() {
                         <button title='Add Water'onClick={() => buttonClick('water')} className='add-water'></button>
                         <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
                     </div>
-                    <div className='map'>
+                    <div className='map-container'>
+                        <div className='map'>
                         <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img>
-
+                        {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}   {/* temp location move where ever */}
+                        
                     </div>
+                        
+                    </div>
+                    
                     <div className='garden-stats'>
                         <div className='bg-1'>
                             <div className='stat'></div>
