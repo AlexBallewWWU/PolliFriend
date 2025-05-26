@@ -20,14 +20,35 @@
     margin: 0;
   }
   
+  .button {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  .header-left {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hamburger-img {
+    height: 55px;
+  }
+
   .hamburger {
+    font-size: 26px;
+    cursor: pointer;
+  }
+  /* .hamburger {
     position: absolute;
     left: 20px;
     font-size: 26px;
     cursor: pointer;
     top: 50%;
     transform: translateY(-50%);
-  }
+  } */
   
   .Boarder {
     height: 1%;

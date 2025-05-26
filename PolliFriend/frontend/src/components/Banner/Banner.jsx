@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Links } from 'react-router-dom';
 import './Banner.css';
+import logo from '../../../public/PolliFriendLogo.png'
 
 function Banner({ name }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,8 +9,13 @@ function Banner({ name }) {
   return (
     <div className="Header">
       <div className="Banner">
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          &#9776;
+        <div className='header-left'>
+          <a href='/'>
+            <img className="hamburger-img" src={logo} alt="" />
+          </a>
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            &#9776;
+          </div>
         </div>
         <h1>{name}</h1>
       </div>
