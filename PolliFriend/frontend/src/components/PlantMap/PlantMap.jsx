@@ -8,10 +8,10 @@ function PlantMap() {
 
     const handleMapClick = (e) => {
         const rect = e.target.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const x = e.clientX;
+        const y = e.clientY;
 
-        setItems([...items, { x, y, type: mode }]);
+        setItems([...items, { x, y, type: "plant" }]);
     };
     const [items, setItems] = useState([
         { id: 1, x: 100, y: 150, type: 'plant', label: 'Tomato', icon: '🍅' },
@@ -49,7 +49,7 @@ function PlantMap() {
             </h1>
             <div className="map-container" onClick={handleMapClick} >
                 <img src={map} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
-                {/* {items.map((item, idx) => (
+                {items.map((item, idx) => (
                     <div
                         key={idx}
                         className={`item ${item.type}`}
@@ -66,7 +66,7 @@ function PlantMap() {
                             transform: 'translate(-50%, -50%)'
                         }}
                     />
-                ))} */}
+                ))}
             </div>
             <img src="" alt="" />
         </>
