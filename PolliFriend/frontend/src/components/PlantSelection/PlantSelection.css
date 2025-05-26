@@ -2,7 +2,7 @@
     width: 30%;
     min-width: 400px;
     min-height: 400px;
-    height: 30%;
+    height: fit-content;
     background-color: black;
     border-radius: 10px;
     margin-top: 5%; /* delete later*/
@@ -53,13 +53,49 @@
 
 .plant-container {
     width: 97%;
+    max-height: 35%;
     border-radius: 10px;
     background-color: #59C07B;
     color: black;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     font-size: 40px;
     padding: 2%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 1%;
 }
+
+.plant-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+}
+
+.plant-container p {
+    font-size: medium;
+    margin-top: 1%;
+}
+
+.plant-container strong {
+    font-size: large;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+.plant-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.plus-button {
+    width: 50px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #59C07B;
+}
+
