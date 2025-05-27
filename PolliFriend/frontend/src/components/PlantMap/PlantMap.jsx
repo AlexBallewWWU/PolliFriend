@@ -3,38 +3,23 @@ import './PlantMap.css'
 import map from '../../assets/istockphoto-1322626419-612x612.jpg'
 function PlantMap() {
 
-    const [x, setX] = useState(0);
-    const [y, setY] = useState(0);
 
     const handleMapClick = (e) => {
-        const rect = e.target.getBoundingClientRect();
+        // useEffect(() => {
+            const rect = e.target.getBoundingClientRect();
+        // }, [handleMapClick]);
+        
         const x = e.clientX;
         const y = e.clientY;
 
         setItems([...items, { x, y, type: "plant" }]);
     };
     const [items, setItems] = useState([
-        { id: 1, x: 100, y: 150, type: 'plant', label: 'Tomato', icon: '🍅' },
-        { id: 2, x: 300, y: 200, type: 'building', label: 'Shed', icon: '🏠' },
+        { id: 1, type: 'plant', label: 'Tomato' },
+        { id: 2, type: 'building', label: 'Shed'},
     ]);
-    const drawPerimeter = () => {
-        console.log(x)
-        console.log(y)
-        return (
-            <div
-                style={{
-                    width: x,
-                    height: y,
-                    backgroundColor: "black",
-                    border: '2px solid black',
-                }}
-            ></div>
-        )
-    }
-    useEffect(() => {
-        // drawPerimeter()
-
-    }, [x, y]);
+    // 
+    
     return (
         <>
             <h1 style={{ color: "black" }}>
