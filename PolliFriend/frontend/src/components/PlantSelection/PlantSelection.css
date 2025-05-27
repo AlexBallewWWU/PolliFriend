@@ -1,28 +1,25 @@
 .container {
-    width: 30%;
-    min-width: 400px;
-    min-height: 400px;
-    max-height: 70%;
+    width: 25%;
+    min-width: 300px;
+    max-height: 96%;
     height: fit-content;
     background-color: black;
-    border-radius: 10px;
-    margin-top: 5%; /* delete later*/
-    margin-left: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .category-container {
-    width: 97%;
+    width: 93%;
     border-radius: 10px;
     background-color: #59C07B;
     color: black;
     display: flex;
     justify-content: flex-end;
-    font-size: 40px;
+    font-size: 20px;
     padding: 2%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 1%;
@@ -37,31 +34,31 @@
 .arrow-up {
     width: 0%;
     height: 0%;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid black;
     border-radius: 4px 4px 4px 4px;
 }
 
 .arrow-down {
     width: 0%;
     height: 0%;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid black;
     border-radius: 4px 4px 4px 4px;
     transform: rotate(180deg);
 }
 
 .plant-container {
-    width: 97%;
+    width: 93%;
     max-height: 35%;
     border-radius: 10px;
     background-color: #59C07B;
     color: black;
     display: flex;
     /* justify-content: flex-end; */
-    font-size: 40px;
+    font-size: 25px;
     padding: 2%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 1%;
@@ -74,12 +71,12 @@
 }
 
 .plant-container p {
-    font-size: medium;
+    font-size: small;
     margin-top: 1%;
 }
 
 .plant-container strong {
-    font-size: large;
+    font-size: small;
     margin-top: 2%;
     font-weight: bold;
 }
@@ -91,8 +88,8 @@
 }
 
 .plus-button {
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 20px;
     border-radius: 30px;
     background-color: black;
     display: flex;
@@ -101,3 +98,4 @@
     color: #59C07B;
     cursor: pointer;
 }
+

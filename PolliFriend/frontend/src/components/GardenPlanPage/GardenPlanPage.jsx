@@ -123,27 +123,28 @@ function GardenPlanPage() {
             {/* <div> */}
             <div className='garden-map'>
 
-                <div className='add'>
+                {/* <div className='add'>
                     <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
                     <button title='Add Building' onClick={() => buttonClick('building')} className='add-building'></button>
                     <button title='Add Water' onClick={() => buttonClick('water')} className='add-water'></button>
                     <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
-                </div>
-                <div className='map-container'>
-                    <div className='map'>
+                </div> */}
+                {/* <div className='map-container'> */}
+                    {/* <div className='map'> */}
+                    {/* <div> */}
                         {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}
-                    </div>
+                    {/* </div> */}
+                    {/* </div> */}
                     <PlantMap></PlantMap>
                     {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
                     
-                </div>
-                <div className='garden-barChart'>
-
-                    <Bar data={data} options={options}></Bar>
-
-                </div>
-
+                {/* </div> */}
             </div>
+            <div className='garden-barChart'>
+
+<Bar data={data} options={options}></Bar>
+
+</div>
 
         </>
     )
