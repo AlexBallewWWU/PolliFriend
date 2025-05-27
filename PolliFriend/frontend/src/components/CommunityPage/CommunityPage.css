@@ -1,35 +1,45 @@
-/* Full green background wrapper */
+/* 🌿 Full background for the page */
 .community-wrapper {
-    background-color: #eafbe4;
-    min-height: 100vh;
-    padding-bottom: 40px;
-  }
-  
-  /* Content centered */
-  .community-page {
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 1100px;
-  }
-  
-  /* Submission info */
-  .submission-invite {
-    background-color: #d6f5d6;
-    padding: 20px;
-    margin-top: 40px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #aaa;
-  }
-  
-  .submission-invite h2 {
-    color: #2c9c0d;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-  
-  .submission-invite p {
-    color: #333;
-    font-size: 1rem;
-  }
-  
+  min-height: 100vh;
+  padding-bottom: 40px;
+
+  background-image: url('/assets/educationpage.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🧊 Frosted box for content */
+.community-page {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 1100px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✉️ Submission info */
+.submission-invite {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #aaa;
+}
+
+.submission-invite h2 {
+  color: #2c9c0d;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.submission-invite p {
+  color: #333;
+  font-size: 1rem;
+}
