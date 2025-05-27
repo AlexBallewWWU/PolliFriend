@@ -12,6 +12,7 @@
 }
 .garden-map .map-container {
     flex-grow: 1;
+
 }
 .garden-map .map {
     position: absolute;
