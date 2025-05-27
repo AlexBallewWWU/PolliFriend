@@ -10,7 +10,9 @@ function PlantMap() {
         const x = e.clientX;
         const y = e.clientY;
 
-        setItems([...items, { x, y, type: "plant" }]);
+        // setItems([...items, { x, y, type: "plant" }]);
+        setItems([...items, { x, y, type: "building" }]);
+
     };
     //Temporary tests, to connect to the database
     const [items, setItems] = useState([
