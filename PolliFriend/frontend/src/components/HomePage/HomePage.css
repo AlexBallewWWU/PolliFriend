@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 5%;
 }
 
 .Title{
@@ -25,29 +26,32 @@
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
 }
 .PlanSection{
-    padding-top: 4%;
+    padding-top: 6%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .PlanDesctiption{
     width: 300px;
+    font-size: 20px;
 }
 .EducationSection{
-    padding-top: 4%;
+    padding-top: 6%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .EducationDesctiption{
     width: 300px;
+    font-size: 20px;
 }
 .CommunitySection{
-    padding-top: 4%;
+    padding-top: 6%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .CommunityDesctiption{
     width: 300px;
+    font-size: 20px;
 }

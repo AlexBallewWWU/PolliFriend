@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import './PlantSelection.css'
+import plantIcon from '../../assets/plant.svg'
+import buildingIcon from '../../assets/house.svg'
+import waterIcon from '../../assets/water-drop-png-plumbing-sewer-repair-septic-service-36.png'
 
 function PlantSelection({plantData}) {
 
@@ -7,11 +10,28 @@ function PlantSelection({plantData}) {
 
   return (
     <div className='container'>
+      <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px", padding: 0}}>
+        <img src={plantIcon} style={{width: '27%'}}></img>
+      </div>
       <Category name={"Shrub"} plantData={plantData}></Category>
       <Category name={"Perennial"} plantData={plantData}></Category>
       <Category name={"Tree"} plantData={plantData}></Category>
-      <Category name={"Ferns"} plantData={plantData}></Category>
       <Category name={"Fruits"} plantData={plantData}></Category>
+      <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
+        <img src={buildingIcon} style={{height: '30%', width: '20%'}}></img>
+      </div>
+      <Category name={"building1"} plantData={plantData}></Category>
+      <Category name={"building1"} plantData={plantData}></Category>
+      <Category name={"building1"} plantData={plantData}></Category>
+      <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
+        <img src={waterIcon} style={{width: '20%'}}></img>
+      </div>
+      <Category name={"Fruits"} plantData={plantData}></Category>
+      <Category name={"Fruits"} plantData={plantData}></Category>
+      <Category name={"Fruits"} plantData={plantData}></Category>
+
+      {/* <Category name={"Fruits"} plantData={plantData}></Category> */}
+
     </div>
     )
 }

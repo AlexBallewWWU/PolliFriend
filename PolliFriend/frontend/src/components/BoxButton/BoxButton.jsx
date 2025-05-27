@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function BoxButton({title, pageURL}) {
 
     const navigate = useNavigate();
-    
+   
     const movePages = () => {
         navigate(pageURL)
     };
