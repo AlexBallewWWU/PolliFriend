@@ -6,17 +6,17 @@
 
 .garden-map {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
     height: 100%;
 }
 .garden-map .map-container {
     flex-grow: 1;
 
 }
-.garden-map .map {
+/* .garden-map .map {
     position: absolute;
-}
+} */
 .garden-map .add {
     display: flex;
     padding:5%;
