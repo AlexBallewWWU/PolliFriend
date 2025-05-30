@@ -18,7 +18,7 @@ function PlantSelection({plantData}) {
       <Category name={"Tree"} plantData={plantData}></Category>
       <Category name={"Fruits"} plantData={plantData}></Category>
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
-        <img src={buildingIcon} style={{height: '30%', width: '20%'}}></img>
+        <img src={buildingIcon} style={{width: '20%'}}></img>
       </div>
       <Category name={"building1"} plantData={plantData}></Category>
       <Category name={"building1"} plantData={plantData}></Category>
