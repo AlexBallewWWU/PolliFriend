@@ -23,6 +23,8 @@ function PlantSelection({plantData}) {
       <Category name={"building1"} plantData={plantData}></Category>
       <Category name={"building1"} plantData={plantData}></Category>
       <Category name={"building1"} plantData={plantData}></Category>
+      <Category name={"building1"} plantData={plantData}></Category>
+      <Category name={"building1"} plantData={plantData}></Category>
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
         <img src={waterIcon} style={{width: '20%'}}></img>
       </div>
