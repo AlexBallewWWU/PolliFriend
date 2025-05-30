@@ -12,7 +12,7 @@ function PlantMap() {
         const x = e.clientX;
         const y = e.clientY;
 
-        setItems([...items, { x, y, type: "plant" }]);
+        setItems([...items, { x, y, type: "building" }]);
     };
     const [items, setItems] = useState([
         { id: 1, type: 'plant', label: 'Tomato' },
@@ -44,9 +44,7 @@ function PlantMap() {
                             left: item.x,
                             width: '20px',
                             height: '20px',
-                            backgroundColor: item.type === 'plant' ? 'green' :
-                                item.type === 'building' ? 'gray' :
-                                    'blue',
+                            backgroundColor: item.type === 'plant' ? 'green' : item.type === 'building' ? 'gray' : 'blue',
                             borderRadius: '50%',
                             transform: 'translate(-50%, -50%)'
                         }}
