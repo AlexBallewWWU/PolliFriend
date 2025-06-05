@@ -28,6 +28,7 @@ function GardenPlanPage() {
 
     const [plantSelection, setPlantSelection] = useState(true);
     const [plantData, setPlantData] = useState([]);
+    const [curPlantIcon, setCurPlantIcon] = useState('');
 
     // Could cache this this in local storage if we wanted
     useEffect(() => {
@@ -132,7 +133,7 @@ function GardenPlanPage() {
                 {/* <div className='map-container'> */}
                     {/* <div className='map'> */}
                     {/* <div> */}
-                    {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}
+                    {plantSelection && <PlantSelection plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
                     {/* </div> */}
                     {/* </div> */}
                     <PlantMap></PlantMap>

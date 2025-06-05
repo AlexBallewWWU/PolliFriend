@@ -3,8 +3,14 @@ import './PlantSelection.css'
 import plantIcon from '../../assets/plant.svg'
 import buildingIcon from '../../assets/house.svg'
 import waterIcon from '../../assets/water-drop-png-plumbing-sewer-repair-septic-service-36.png'
+import shrubIcon from '../../assets/shrub-icon.png'
+import flowerIcon from '../../assets/flower-icon.png'
+import treeIcon from '../../assets/tree-icon.png'
+import smallRock from '../../assets/small-rock.png'
+import triangleRock from '../../assets/triangle-rock.png'
+import wideRock from '../../assets/wide-rock.png'
 
-function PlantSelection({plantData}) {
+function PlantSelection({plantData, curPlantIcon, setCurPlantIcon}) {
 
   console.log(plantData)
 
@@ -13,30 +19,30 @@ function PlantSelection({plantData}) {
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px", padding: 0}}>
         <img src={plantIcon} style={{width: '27%'}}></img>
       </div>
-      <Category type={"Shrub"} plantData={plantData}></Category>
-      <Category type={"Perennial"} plantData={plantData}></Category>
-      <Category type={"Tree"} plantData={plantData}></Category>
+      <Category type={"Shrub"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Perennial"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Tree"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
         <img src={buildingIcon} style={{width: '20%'}}></img>
       </div>
-      <Category type={"Rock"} plantData={plantData}></Category>
-      <Category type={"Fence"} plantData={plantData}></Category>
-      <Category type={"Statue"} plantData={plantData}></Category>
-      <Category type={"Steps"} plantData={plantData}></Category>
-      <Category type={"Table"} plantData={plantData}></Category>
+      <Category type={"Rock"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Fence"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Statue"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Steps"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Table"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
         <img src={waterIcon} style={{width: '20%'}}></img>
       </div>
-      <Category type={"Fountain"} plantData={plantData}></Category>
-      <Category type={"Pond"} plantData={plantData}></Category>
-      <Category type={"Pool"} plantData={plantData}></Category>
+      <Category type={"Fountain"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Pond"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Pool"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
       {/* <Category name={"Fruits"} plantData={plantData}></Category> */}
 
     </div>
     )
 }
 
-function Category({type, plantData}) {
+function Category({type, plantData, curPlantIcon, setCurPlantIcon}) {
   const [arrowDirection, setArrowDirection] = useState("up");
 
   const changeArrowDirection = () => {
@@ -52,18 +58,28 @@ function Category({type, plantData}) {
         </div>
       </div>
       { arrowDirection == "down" && (type == "Shrub" || type == "Perennial" ||  type == "Tree") 
-        &&  <Plants type={type} plantData={plantData}></Plants> }
+        &&  <Plants type={type} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Plants> }
       { arrowDirection == "down" && (type == "Rock")  /* add other categories here*/ 
-        &&  <Structure type={type} plantData={plantData}></Structure> }
+        &&  <Structure type={type} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Structure> }
     </>
   )
 }
 
-function Plants({type, plantData}) {
+function Plants({type, plantData, curPlantIcon, setCurPlantIcon}) {
 
-  const addPlant = () => {
-    console.log("Adding plant")
+  const addPlant = (type) => {
+    console.log("Adding plant" + type)
     // functionality here, might be a global var situation
+    if (type == 'Shrub') {
+      console.log(shrubIcon);
+      setCurPlantIcon(shrubIcon);
+    } else if (type == 'Perennial') {
+      console.log(flowerIcon);
+      setCurPlantIcon(flowerIcon)
+    } else {
+      console.log(treeIcon);
+      setCurPlantIcon(treeIcon)
+    }
   }
 
   return (
@@ -75,7 +91,7 @@ function Plants({type, plantData}) {
           <div className='plant-info-container'>
             <div className='plant-title-container'>
               {item.name} 
-              <div className='plus-button' onClick={addPlant}> + </div>
+              <div className='plus-button' onClick={() => addPlant(item.type)}> + </div>
             </div>
             <p> {item.info}</p>
             <strong> Scores: Carbon: ({item.carbonScore}/3), Pollination: ({item.pollinationScore}/10), Water: ({item.waterScore}/6) </strong>
@@ -86,11 +102,21 @@ function Plants({type, plantData}) {
   )
 }
 
-function Structure({type, plantData}) {
+function Structure({type, plantData, curPlantIcon, setCurPlantIcon}) {
 
-  const addPlant = () => {
+  const addPlant = (type) => {
     console.log("Adding plant")
     // functionality here, might be a global var situation
+    if (type == 'Small Rock') {
+      console.log(smallRock);
+      setCurPlantIcon(smallRock);
+    } else if (type == 'Triangle Rock') {
+      console.log(triangleRock);
+      setCurPlantIcon(triangleRock)
+    } else {
+      console.log(wideRock);
+      setCurPlantIcon(wideRock)
+    }
   }
 
   return (
@@ -102,7 +128,7 @@ function Structure({type, plantData}) {
           <div className='plant-info-container'>
             <div className='plant-title-container'>
               {item.name} 
-              <div className='plus-button' onClick={addPlant}> + </div>
+              <div className='plus-button' onClick={() => addPlant(item.name)}> + </div>
             </div>
             <p> {item.info}</p>
           </div>
