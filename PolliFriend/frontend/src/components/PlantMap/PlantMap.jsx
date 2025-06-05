@@ -1,25 +1,25 @@
 import { useEffect, useState } from 'react'
 import './PlantMap.css'
 import map from '../../assets/istockphoto-1322626419-612x612.jpg'
+// import shrub from '../../assets/plant.svg'
+import grid from '../../assets/grid.png'
 function PlantMap() {
-
-    {/* Need to condionally call this function based on the click*/}
+    // {/* Need to condionally call this function based on the click*/}
     const handleMapClick = (e) => {
-        // need this to refresh as the user scrolls down   
+        // need this to refresh as the user scrolls down
         const rect = e.target.getBoundingClientRect();
+        console.log(rect)
         const x = e.clientX;
-        const y = e.clientY;
+        const y = e.clientY + rect.top;
 
         // setItems([...items, { x, y, type: "plant" }]);
-        setItems([...items, { x, y, type: "building" }]);
+        setItems([...items, { x, y, type: "plant" }]);
 
     };
     //Temporary tests, to connect to the database
-    const [items, setItems] = useState([
-        { id: 1, type: 'plant', label: 'Tomato' },
-        { id: 2, type: 'building', label: 'Shed'},
-    ]);
-    
+    const [items, setItems] = useState([]);
+    // document.addEventListener("scroll", handleMapClick);
+
     return (
         <>
             <h1 style={{ color: "black" }}>
@@ -34,7 +34,8 @@ function PlantMap() {
 
             </h1>
             <div className="map-container" onClick={handleMapClick} >
-                <img src={map} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
+                <img src={map} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: '30%'}}/>
+                
                 {/* display clicks, could also be the issue with the dots */}
                 {items.map((item, idx) => (
                     <div
@@ -44,18 +45,12 @@ function PlantMap() {
                             position: 'absolute',
                             top: item.y,
                             left: item.x,
-                            width: '20px',
-                            height: '20px',
-                            backgroundColor: item.type === 'plant' ? 'green' :
-                                item.type === 'building' ? 'gray' :
-                                    'blue',
-                            borderRadius: '50%',
                             transform: 'translate(-50%, -50%)'
                         }}
                     />
                 ))}
             </div>
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
         </>
     )
 }

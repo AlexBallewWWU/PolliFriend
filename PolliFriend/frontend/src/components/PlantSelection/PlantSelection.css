@@ -1,8 +1,6 @@
 .container {
+    min-width: 350px;
     width: 25%;
-    min-width: 300px;
-    max-height: 96%;
-    height: fit-content;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -14,6 +12,7 @@
 
 .category-container {
     width: 93%;
+    height: 100%;
     border-radius: 10px;
     background-color: #59C07B;
     color: black;
@@ -64,6 +63,10 @@
     margin: 1%;
 }
 
+.plant-container img {
+    max-height: 70%;
+}
+
 .plant-info-container {
     display: flex;
     flex-direction: column;
@@ -98,4 +101,3 @@
     color: #59C07B;
     cursor: pointer;
 }
-

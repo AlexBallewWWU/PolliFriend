@@ -132,7 +132,7 @@ function GardenPlanPage() {
                 {/* <div className='map-container'> */}
                     {/* <div className='map'> */}
                     {/* <div> */}
-                        {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}
+                    {plantSelection && <PlantSelection plantData={plantData}> </PlantSelection>}
                     {/* </div> */}
                     {/* </div> */}
                     <PlantMap></PlantMap>

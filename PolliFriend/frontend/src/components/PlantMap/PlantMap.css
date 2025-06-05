@@ -1,0 +1,19 @@
+.item {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: 100%;
+}
+
+.item.plant {
+  background-image: url('../../assets/plant.svg'); 
+}
+
+.item.building {
+  background-color: gray;
+}
+
+.item.water {
+  background-color: blue;
+}
