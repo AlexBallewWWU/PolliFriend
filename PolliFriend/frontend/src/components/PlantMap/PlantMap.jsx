@@ -3,7 +3,6 @@ import './PlantMap.css'
 import map from '../../assets/istockphoto-1322626419-612x612.jpg'
 function PlantMap() {
 
-
     const handleMapClick = (e) => {
         // useEffect(() => {
             const rect = e.target.getBoundingClientRect();
