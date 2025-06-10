@@ -16,7 +16,7 @@ function PlantSelection({plantData, curPlantIcon, setCurPlantIcon}) {
 
   return (
     <div className='container'>
-      <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px", padding: 0}}>
+      <div className='category-container' style={{justifyContent: 'center', width: '100%', fontSize: "30px", padding: 0}}>
         <img src={plantIcon} style={{width: '27%'}}></img>
       </div>
       <Category type={"Shrub"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
@@ -36,8 +36,6 @@ function PlantSelection({plantData, curPlantIcon, setCurPlantIcon}) {
       <Category type={"Fountain"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
       <Category type={"Pond"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
       <Category type={"Pool"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      {/* <Category name={"Fruits"} plantData={plantData}></Category> */}
-
     </div>
     )
 }

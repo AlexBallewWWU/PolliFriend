@@ -26,7 +26,6 @@ import PlantMap from '../PlantMap/PlantMap.jsx';
 
 function GardenPlanPage() {
 
-    const [plantSelection, setPlantSelection] = useState(true);
     const [plantData, setPlantData] = useState([]);
     const [curPlantIcon, setCurPlantIcon] = useState('');
 
@@ -120,33 +119,14 @@ function GardenPlanPage() {
 
     return (
         <>
-            <Banner name={"Garden Planning Page"}></Banner>
-            {/* <div> */}
+            <Banner name={"Garden Planning Page"}/>
             <div className='garden-map'>
-
-                {/* <div className='add'>
-                    <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
-                    <button title='Add Building' onClick={() => buttonClick('building')} className='add-building'></button>
-                    <button title='Add Water' onClick={() => buttonClick('water')} className='add-water'></button>
-                    <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
-                </div> */}
-                {/* <div className='map-container'> */}
-                    {/* <div className='map'> */}
-                    {/* <div> */}
-                    {plantSelection && <PlantSelection plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
-                    {/* </div> */}
-                    {/* </div> */}
-                    <PlantMap></PlantMap>
-                    {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
-                    
-                {/* </div> */}
+                <PlantSelection plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}/>
+                <PlantMap/>
             </div>
             <div className='garden-barChart'>
-
-<Bar data={data} options={options}></Bar>
-
-</div>
-
+                <Bar data={data} options={options}/>
+            </div>
         </>
     )
 }
