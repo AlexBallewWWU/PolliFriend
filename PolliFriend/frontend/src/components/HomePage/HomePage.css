@@ -5,7 +5,6 @@
     flex-direction: column;
     padding-bottom: 5%;
 }
-
 .Title{
     display: flex;
     justify-content: center;
@@ -32,8 +31,19 @@
     justify-content: space-evenly;
 }
 .PlanDesctiption{
-    width: 300px;
-    font-size: 20px;
+    width: 350px;
+    height: 200px;
+    padding: .5%;
+    font-size: 25px;
+}
+.PlanPreview{
+    width: 350px;
+    height: 220px;
+    background-image: url('../../assets/GardenPage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
 }
 .EducationSection{
     padding-top: 6%;
@@ -41,9 +51,20 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+.EducationPreview{
+    width: 350px;
+    height: 220px;
+    background-image: url('../../assets/EducationPage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+}
 .EducationDesctiption{
-    width: 300px;
-    font-size: 20px;
+    width: 350px;
+    height: 200px;
+    padding: .5%;
+    font-size: 25px;
 }
 .CommunitySection{
     padding-top: 6%;
@@ -51,7 +72,18 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+.CommunityPreview{
+    width: 350px;
+    height: 220px;
+    background-image: url('../../assets/ComunityPage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+}
 .CommunityDesctiption{
-    width: 300px;
-    font-size: 20px;
+    width: 350px;
+    height: 200px;
+    padding: .5%;
+    font-size: 25px;
 }
