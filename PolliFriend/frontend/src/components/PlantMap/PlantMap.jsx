@@ -1,27 +1,35 @@
 import { useEffect, useState } from 'react'
 import './PlantMap.css'
 import map from '../../assets/istockphoto-1322626419-612x612.jpg'
-function PlantMap() {
-
+import shrub from '../../assets/plant.svg'
+import grid from '../../assets/grid.png'
+var i = 1;
+function PlantMap({ curPlantInfo }) {
+    // console.log(curPlantInfo.plantData.plants[i].type)
+    // useEffect = ({
+    //     handleMapClick
+    // }, [])
     const handleMapClick = (e) => {
-        // useEffect(() => {
-            const rect = e.target.getBoundingClientRect();
-        // }, [handleMapClick]);
-        
+        // need this to refresh as the user scrolls down
+        const rect = e.target.getBoundingClientRect();
+        console.log(e)
         const x = e.clientX;
-        const y = e.clientY;
+        const y = e.screenY - rect.top;
 
-        setItems([...items, { x, y, type: "building" }]);
+        setItems([...items, { x, y, type: "plant" }]);
+        // setItems((prevItems) =>
+        //     prevItems.map((item, i) => (i === index ? newValue : item))
+        // );
+        i++;
     };
-    const [items, setItems] = useState([
-        { id: 1, type: 'plant', label: 'Tomato' },
-        { id: 2, type: 'building', label: 'Shed'},
-    ]);
-    // 
-    
+    //Temporary tests, to connect to the database
+    const [items, setItems] = useState([]);
+    // document.addEventListener("scroll", handleMapClick);
+
     return (
         <>
             <h1 style={{ color: "black" }}>
+                {/* Initial Idea for grid, mostl likely will scrap but kept this here in case */}
                 {/* <form >
                     <label>
                         Yard Dimensions:
@@ -32,7 +40,9 @@ function PlantMap() {
 
             </h1>
             <div className="map-container" onClick={handleMapClick} >
-                <img src={map} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
+                <img src={grid} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: '30%' }} />
+
+                {/* display clicks, could also be the issue with the dots */}
                 {items.map((item, idx) => (
                     <div
                         key={idx}
@@ -41,16 +51,19 @@ function PlantMap() {
                             position: 'absolute',
                             top: item.y,
                             left: item.x,
-                            width: '20px',
-                            height: '20px',
-                            backgroundColor: item.type === 'plant' ? 'green' : item.type === 'building' ? 'gray' : 'blue',
+                            backgroundImage: `url(${curPlantInfo.curPlantIcon})`,
+                            width: '100px',
+                            height: '100px',
                             borderRadius: '50%',
-                            transform: 'translate(-50%, -50%)'
+                            backgroundPosition: 'center',
+                            backgroundSize: '100%',
+                            transform: 'translate(-50%, -50%)',
+
                         }}
                     />
                 ))}
             </div>
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
         </>
     )
 }
