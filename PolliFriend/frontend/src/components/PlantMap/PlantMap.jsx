@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react'
 import './PlantMap.css'
 import map from '../../assets/istockphoto-1322626419-612x612.jpg'
-// import shrub from '../../assets/plant.svg'
+import shrub from '../../assets/plant.svg'
 import grid from '../../assets/grid.png'
-function PlantMap() {
-    // {/* Need to condionally call this function based on the click*/}
+var i = 1;
+function PlantMap({ curPlantInfo }) {
+    // console.log(curPlantInfo.plantData.plants[i].type)
+    // useEffect = ({
+    //     handleMapClick
+    // }, [])
     const handleMapClick = (e) => {
         // need this to refresh as the user scrolls down
         const rect = e.target.getBoundingClientRect();
-        console.log(rect)
+        console.log(e)
         const x = e.clientX;
-        const y = e.clientY + rect.top;
+        const y = e.screenY - rect.top;
 
-        // setItems([...items, { x, y, type: "plant" }]);
         setItems([...items, { x, y, type: "plant" }]);
-
+        // setItems((prevItems) =>
+        //     prevItems.map((item, i) => (i === index ? newValue : item))
+        // );
+        i++;
     };
     //Temporary tests, to connect to the database
     const [items, setItems] = useState([]);
@@ -34,8 +40,8 @@ function PlantMap() {
 
             </h1>
             <div className="map-container" onClick={handleMapClick} >
-                <img src={map} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: '30%'}}/>
-                
+                <img src={grid} alt="Garden Map" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: '30%' }} />
+
                 {/* display clicks, could also be the issue with the dots */}
                 {items.map((item, idx) => (
                     <div
@@ -45,7 +51,14 @@ function PlantMap() {
                             position: 'absolute',
                             top: item.y,
                             left: item.x,
-                            transform: 'translate(-50%, -50%)'
+                            backgroundImage: `url(${curPlantInfo.curPlantIcon})`,
+                            width: '100px',
+                            height: '100px',
+                            borderRadius: '50%',
+                            backgroundPosition: 'center',
+                            backgroundSize: '100%',
+                            transform: 'translate(-50%, -50%)',
+
                         }}
                     />
                 ))}

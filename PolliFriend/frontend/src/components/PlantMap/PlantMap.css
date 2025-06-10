@@ -1,19 +1,20 @@
-.item {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-position: center;
-  background-size: 100%;
+.item.plant {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 100%;
+    /* bac?kground-image: url('/src/assets/shrub-icon.png');  */
 }
 
-.item.plant {
-  background-image: url('../../assets/plant.svg'); 
+.item.shrub {
+    
 }
 
 .item.building {
-  background-color: gray;
+    background-color: gray;
 }
 
 .item.water {
-  background-color: blue;
+    background-color: blue;
 }
