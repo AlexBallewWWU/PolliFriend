@@ -136,7 +136,7 @@ function GardenPlanPage() {
                     {plantSelection && <PlantSelection plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
                     {/* </div> */}
                     {/* </div> */}
-                    <PlantMap></PlantMap>
+                    <PlantMap curPlantInfo={{curPlantIcon, plantData}}></PlantMap>
                     {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
                     
                 {/* </div> */}
