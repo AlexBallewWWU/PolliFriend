@@ -10,39 +10,37 @@ import smallRock from '../../assets/small-rock.png'
 import triangleRock from '../../assets/triangle-rock.png'
 import wideRock from '../../assets/wide-rock.png'
 
-function PlantSelection({plantData, curPlantIcon, setCurPlantIcon}) {
+function PlantSelection({plantData, setCurPlantInfo, setCurPlantIcon}) {
 
   console.log(plantData)
 
   return (
     <div className='container'>
-      <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px", padding: 0}}>
+      <div className='category-container' style={{justifyContent: 'center', width: '100%', fontSize: "30px", padding: 0}}>
         <img src={plantIcon} style={{width: '27%'}}></img>
       </div>
-      <Category type={"Shrub"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Perennial"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Tree"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Shrub"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Perennial"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Tree"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
         <img src={buildingIcon} style={{width: '20%'}}></img>
       </div>
-      <Category type={"Rock"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Fence"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Statue"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Steps"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Table"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Rock"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Fence"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Statue"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Steps"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Table"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
       <div className='category-container' style={{justifyContent: 'center', width: '97%', fontSize: "30px"}}>
         <img src={waterIcon} style={{width: '20%'}}></img>
       </div>
-      <Category type={"Fountain"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Pond"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      <Category type={"Pool"} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Category>
-      {/* <Category name={"Fruits"} plantData={plantData}></Category> */}
-
+      <Category type={"Fountain"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Pond"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
+      <Category type={"Pool"} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Category>
     </div>
     )
 }
 
-function Category({type, plantData, curPlantIcon, setCurPlantIcon}) {
+function Category({type, plantData, setCurPlantInfo, setCurPlantIcon}) {
   const [arrowDirection, setArrowDirection] = useState("up");
 
   const changeArrowDirection = () => {
@@ -58,22 +56,22 @@ function Category({type, plantData, curPlantIcon, setCurPlantIcon}) {
         </div>
       </div>
       { arrowDirection == "down" && (type == "Shrub" || type == "Perennial" ||  type == "Tree") 
-        &&  <Plants type={type} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Plants> }
+        &&  <Plants type={type} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Plants> }
       { arrowDirection == "down" && (type == "Rock")  /* add other categories here*/ 
-        &&  <Structure type={type} plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}></Structure> }
+        &&  <Structure type={type} plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}></Structure> }
     </>
   )
 }
 
-function Plants({type, plantData, curPlantIcon, setCurPlantIcon}) {
+function Plants({type, plantData, setCurPlantInfo, setCurPlantIcon}) {
 
-  const addPlant = (type) => {
+  const addPlant = (item) => {
     console.log("Adding plant" + type)
-    // functionality here, might be a global var situation
-    if (type == 'Shrub') {
+    setCurPlantInfo(item);
+    if (item.type == 'Shrub') {
       console.log(shrubIcon);
       setCurPlantIcon(shrubIcon);
-    } else if (type == 'Perennial') {
+    } else if (item.type == 'Perennial') {
       console.log(flowerIcon);
       setCurPlantIcon(flowerIcon)
     } else {
@@ -91,7 +89,7 @@ function Plants({type, plantData, curPlantIcon, setCurPlantIcon}) {
           <div className='plant-info-container'>
             <div className='plant-title-container'>
               {item.name} 
-              <div className='plus-button' onClick={() => addPlant(item.type)}> + </div>
+              <div className='plus-button' onClick={() => addPlant(item)}> + </div>
             </div>
             <p> {item.info}</p>
             <strong> Scores: Carbon: ({item.carbonScore}/3), Pollination: ({item.pollinationScore}/10), Water: ({item.waterScore}/6) </strong>
@@ -102,7 +100,7 @@ function Plants({type, plantData, curPlantIcon, setCurPlantIcon}) {
   )
 }
 
-function Structure({type, plantData, curPlantIcon, setCurPlantIcon}) {
+function Structure({type, plantData, setCurPlantInfo, setCurPlantIcon}) {
 
   const addPlant = (type) => {
     console.log("Adding plant")

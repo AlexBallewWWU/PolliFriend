@@ -29,6 +29,11 @@ function GardenPlanPage() {
     const [plantSelection, setPlantSelection] = useState(true);
     const [plantData, setPlantData] = useState([]);
     const [curPlantIcon, setCurPlantIcon] = useState('');
+    const [curPlantInfo, setCurPlantInfo] = useState('');
+    const [carbonScore, setCarbonScore] = useState(0);
+    const [waterScore, setWaterScore] = useState(0);
+    const [pollinScore, setPollinScore] = useState(0);
+
 
     // Could cache this this in local storage if we wanted
     useEffect(() => {
@@ -70,10 +75,10 @@ function GardenPlanPage() {
     }
 
     const data = {
-        labels: ['Fire safty', 'CO2 consumption', 'Water Consumption', 'Plants'],
+        labels: ['CO2 consumption', 'Water Consumption', 'Pollination'],
         datasets: [{
             label: 'Garden Stats',
-            data: [65, 59, 80, 81],
+            data: [carbonScore, waterScore, pollinScore],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(98, 98, 97, 0.2)',
@@ -133,10 +138,10 @@ function GardenPlanPage() {
                 {/* <div className='map-container'> */}
                     {/* <div className='map'> */}
                     {/* <div> */}
-                    {plantSelection && <PlantSelection plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
+                    {plantSelection && <PlantSelection plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
                     {/* </div> */}
                     {/* </div> */}
-                    <PlantMap curPlantInfo={{curPlantIcon, plantData}}></PlantMap>
+                    <PlantMap curPlantIcon={curPlantIcon} curPlantInfo={curPlantInfo} setCarbonScore={setCarbonScore} setWaterScore={setWaterScore} setPollinScore={setPollinScore}></PlantMap>
                     {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
                     
                 {/* </div> */}
