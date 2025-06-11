@@ -26,8 +26,14 @@ import PlantMap from '../PlantMap/PlantMap.jsx';
 
 function GardenPlanPage() {
 
+    const [plantSelection, setPlantSelection] = useState(true);
     const [plantData, setPlantData] = useState([]);
     const [curPlantIcon, setCurPlantIcon] = useState('');
+    const [curPlantInfo, setCurPlantInfo] = useState('');
+    const [carbonScore, setCarbonScore] = useState(0);
+    const [waterScore, setWaterScore] = useState(0);
+    const [pollinScore, setPollinScore] = useState(0);
+
 
     // Could cache this this in local storage if we wanted
     useEffect(() => {
@@ -69,10 +75,10 @@ function GardenPlanPage() {
     }
 
     const data = {
-        labels: ['Fire safty', 'CO2 consumption', 'Water Consumption', 'Plants'],
+        labels: ['CO2 consumption', 'Water Consumption', 'Pollination'],
         datasets: [{
             label: 'Garden Stats',
-            data: [65, 59, 80, 81],
+            data: [carbonScore, waterScore, pollinScore],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(98, 98, 97, 0.2)',
@@ -119,14 +125,33 @@ function GardenPlanPage() {
 
     return (
         <>
-            <Banner name={"Garden Planning Page"}/>
+            <Banner name={"Garden Planning Page"}></Banner>
+            {/* <div> */}
             <div className='garden-map'>
-                <PlantSelection plantData={plantData} curPlantIcon={curPlantIcon} setCurPlantIcon={setCurPlantIcon}/>
-                <PlantMap/>
+
+                {/* <div className='add'>
+                    <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
+                    <button title='Add Building' onClick={() => buttonClick('building')} className='add-building'></button>
+                    <button title='Add Water' onClick={() => buttonClick('water')} className='add-water'></button>
+                    <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
+                </div> */}
+                {/* <div className='map-container'> */}
+                    {/* <div className='map'> */}
+                    {/* <div> */}
+                    {plantSelection && <PlantSelection plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
+                    {/* </div> */}
+                    {/* </div> */}
+                    <PlantMap curPlantIcon={curPlantIcon} curPlantInfo={curPlantInfo} setCarbonScore={setCarbonScore} setWaterScore={setWaterScore} setPollinScore={setPollinScore}></PlantMap>
+                    {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
+                    
+                {/* </div> */}
             </div>
             <div className='garden-barChart'>
-                <Bar data={data} options={options}/>
-            </div>
+
+<Bar data={data} options={options}></Bar>
+
+</div>
+
         </>
     )
 }

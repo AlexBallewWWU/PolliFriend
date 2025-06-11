@@ -4,7 +4,7 @@ import map from '../../assets/istockphoto-1322626419-612x612.jpg'
 import shrub from '../../assets/plant.svg'
 import grid from '../../assets/grid.png'
 var i = 1;
-function PlantMap({ curPlantInfo }) {
+function PlantMap({ curPlantIcon, curPlantInfo, setCarbonScore, setWaterScore, setPollinScore}) {
     // console.log(curPlantInfo.plantData.plants[i].type)
     // useEffect = ({
     //     handleMapClick
@@ -15,8 +15,14 @@ function PlantMap({ curPlantInfo }) {
         console.log(e)
         const x = e.clientX;
         const y = e.screenY - rect.top;
+        console.log(curPlantInfo)
 
         setItems([...items, { x, y, type: "plant" }]);
+        // Variables are set up I just need to add calcs here
+        console.log(curPlantInfo)
+        setCarbonScore();
+        setPollinScore();
+        setWaterScore();
         // setItems((prevItems) =>
         //     prevItems.map((item, i) => (i === index ? newValue : item))
         // );
@@ -51,7 +57,7 @@ function PlantMap({ curPlantInfo }) {
                             position: 'absolute',
                             top: item.y,
                             left: item.x,
-                            backgroundImage: `url(${curPlantInfo.curPlantIcon})`,
+                            backgroundImage: `url(${curPlantIcon})`,
                             width: '100px',
                             height: '100px',
                             borderRadius: '50%',
