@@ -12,6 +12,19 @@ function CommunityGallery() {
       .catch((err) => console.error('Error fetching:', err));
   }, []);
 
+  const handleLike = async (id) => {
+  try {
+    const res = await fetch(`http://localhost:3000/api/submissions/${id}/like`, {
+      method: 'POST',
+    });
+    const updated = await res.json();
+    console.log("Liked Submission:", updated); // 👈 Add this
+    setSubmissions(submissions.map(s => s._id === id ? updated : s));
+  } catch (err) {
+    console.error('Failed to like:', err);
+  }
+};
+
   const filtered = submissions.filter((entry) =>
     entry.location.toLowerCase().includes(search.toLowerCase())
   );
@@ -45,6 +58,10 @@ function CommunityGallery() {
             </div>
           </div>
           <p className="submitted-text">Submitted by {entry.name} in {entry.location}</p>
+          
+          <div className="like-section">
+            <button onClick={() => handleLike(entry._id)}>❤️ {entry.likes || 0}</button>
+          </div>
         </div>
       ))}
     </div>
@@ -52,4 +69,3 @@ function CommunityGallery() {
 }
 
 export default CommunityGallery;
-

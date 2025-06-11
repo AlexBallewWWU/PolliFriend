@@ -7,22 +7,23 @@ function EducationPage() {
   const [activeCard, setActiveCard] = useState(null);
 
   const topics = [
-    {
-      title: "How to Encourage Pollinators",
-      info: "To attract pollinators like bees, butterflies, and hummingbirds, focus on creating a diverse and vibrant garden with a variety of flowering plants, including native species, and ensure a succession of blooms throughout the growing season.",
-      youtube: "https://www.youtube.com/embed/U-B86l-mEs8"
-    },
-    {
-      title: "Use Resources Smartly",
-      info: "Using resources smartly involves being mindful and efficient with how resources are utilized to maximize their impact while minimizing waste and environmental impact.",
-      video: "https://www.youtube.com/embed/U-B86l-mEs8"
-    },
-    {
-      title: "What Plants to Use",
-      info: "You can help pollinators significantly by growing a diversity of native plants in your space. Our regional native plant lists highlight species that support pollinators and biodiversity.",
-      video: "https://www.youtube.com/embed/U-B86l-mEs8"
-    }
-  ];
+  {
+    title: "How to Encourage Pollinators",
+    info: "To attract pollinators like bees, butterflies, and hummingbirds, focus on creating a diverse and vibrant garden with a variety of flowering plants, including native species, and ensure a succession of blooms throughout the growing season.",
+    youtube: "https://www.youtube.com/embed/U-B86l-mEs8"
+  },
+  {
+    title: "Use Resources Smartly",
+    info: "Using resources smartly involves being mindful and efficient with how resources are utilized to maximize their impact while minimizing waste and environmental impact.",
+    youtube: "https://www.youtube.com/embed/8c2wUQixF94"
+  },
+  {
+    title: "What Plants to Use",
+    info: "You can help pollinators significantly by growing a diversity of native plants in your space. Our regional native plant lists highlight species that support pollinators and biodiversity.",
+    youtube: "https://www.youtube.com/embed/47Jv5pLIRdI"
+  }
+];
+
 
   return (
     <div className="education-background">
