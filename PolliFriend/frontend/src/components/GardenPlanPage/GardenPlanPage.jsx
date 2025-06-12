@@ -1,6 +1,10 @@
 import './GardenPlanPage.css'
-import tempMap from '../../assets/temp.svg'
 import Banner from '../Banner/Banner.jsx'
+import PlantSelection from '../PlantSelection/PlantSelection.jsx'
+import { useEffect, useState } from 'react'
+import PlantMap from '../PlantMap/PlantMap.jsx';
+import { Bar } from 'react-chartjs-2';
+
 import {
     Chart as ChartJS,
     BarElement,
@@ -10,7 +14,7 @@ import {
     Legend,
     Title
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+
 ChartJS.register(
     BarElement,
     CategoryScale,
@@ -19,14 +23,9 @@ ChartJS.register(
     Legend,
     Title
 )
-import PlantSelection from '../PlantSelection/PlantSelection.jsx'
-import { useEffect, useState } from 'react'
-import PlantMap from '../PlantMap/PlantMap.jsx';
-
 
 function GardenPlanPage() {
 
-    const [plantSelection, setPlantSelection] = useState(true);
     const [plantData, setPlantData] = useState([]);
     const [curPlantIcon, setCurPlantIcon] = useState('');
     const [curPlantInfo, setCurPlantInfo] = useState('');
@@ -57,20 +56,6 @@ function GardenPlanPage() {
             }
         } catch (error) {
             console.log(error)
-        }
-    }
-
-    const buttonClick = (type) => {
-        switch (type) {
-            case "plant":
-                setPlantSelection(plantSelection ? false : true);
-                break;
-            case "building":
-                break;
-            case "water":
-                break;
-            default:
-                break;
         }
     }
 
@@ -126,32 +111,13 @@ function GardenPlanPage() {
     return (
         <>
             <Banner name={"Garden Planning Page"}></Banner>
-            {/* <div> */}
             <div className='garden-map'>
-
-                {/* <div className='add'>
-                    <button title='Add Plants' onClick={() => buttonClick('plant')} className='add-plant'></button>
-                    <button title='Add Building' onClick={() => buttonClick('building')} className='add-building'></button>
-                    <button title='Add Water' onClick={() => buttonClick('water')} className='add-water'></button>
-                    <button title='Add Road' onClick={() => buttonClick('other')} className='add-other'></button>
-                </div> */}
-                {/* <div className='map-container'> */}
-                    {/* <div className='map'> */}
-                    {/* <div> */}
-                    {plantSelection && <PlantSelection plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>}
-                    {/* </div> */}
-                    {/* </div> */}
+                    <PlantSelection plantData={plantData} setCurPlantInfo={setCurPlantInfo} setCurPlantIcon={setCurPlantIcon}> </PlantSelection>
                     <PlantMap curPlantIcon={curPlantIcon} curPlantInfo={curPlantInfo} setCarbonScore={setCarbonScore} setWaterScore={setWaterScore} setPollinScore={setPollinScore}></PlantMap>
-                    {/* <img src={tempMap} style={{ width: '100%', height: '100%', objectFit: 'cover' }}></img> */}
-                    
-                {/* </div> */}
             </div>
             <div className='garden-barChart'>
-
-<Bar data={data} options={options}></Bar>
-
-</div>
-
+                <Bar data={data} options={options}></Bar>
+            </div>
         </>
     )
 }
